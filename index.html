@@ -3,135 +3,171 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Styles Foundation Africa | Change the World Through a Swing</title>
-  <meta name="description" content="A personalized nonprofit demo website for Styles Foundation Africa and Isaac Sekulima / Isaac Styles Golf." />
+  <title>Styles Foundation Africa | Golf Access for Uganda’s Youth</title>
+  <meta name="description" content="A custom demo site for Styles Foundation Africa — donations, youth golf programs, and mission-driven golf merchandise." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav">
-      <a class="brand" href="#top"><span>SFA</span><strong>Styles Foundation Africa</strong></a>
-      <div class="nav-links">
-        <a href="#story">Story</a>
-        <a href="#work">Work</a>
-        <a href="#donate">Donate</a>
-        <a href="#shop">Merch</a>
-      </div>
-      <a class="nav-cta" href="#donate">Support the Mission</a>
+  <div class="grain"></div>
+
+  <header class="topbar">
+    <a class="logo" href="#top" aria-label="Styles Foundation Africa">
+      <span class="logo-mark">S</span>
+      <span><b>Styles</b> Foundation Africa</span>
+    </a>
+    <nav>
+      <a href="#story">Isaac’s Story</a>
+      <a href="#programs">Programs</a>
+      <a href="#donate">Donate</a>
+      <a href="#shop">Shop</a>
     </nav>
+    <a class="top-button" href="#donate">Give Now</a>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="hero-copy">
-        <p class="kicker">Lugazi, Uganda · Youth Golf · Mentorship</p>
-        <h1>Changing the world through a swing.</h1>
-        <p class="lead">Styles Foundation Africa is the movement behind Isaac Sekulima — the self‑taught, barefoot golfer bringing golf, mentorship, and opportunity to children who deserve the chance to begin.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#donate">Donate to the Next Clinic</a>
-          <a class="btn ghost" href="#story">Meet Isaac</a>
+      <div class="hero-text">
+        <p class="tag">LUGAZI, UGANDA • YOUTH GOLF • MENTORSHIP</p>
+        <h1>From red dirt roads to the first tee.</h1>
+        <p class="subhead">A personalized donation and merchandise demo for <strong>Styles Foundation Africa</strong> — the youth golf movement connected to Isaac Sekulima, also known as <strong>Isaac Styles Golf</strong>.</p>
+        <div class="actions">
+          <a class="btn primary" href="#donate">Fund a Child’s First Swing</a>
+          <a class="btn outline" href="#story">See the Story</a>
+        </div>
+        <div class="hero-note">
+          <span>“Let’s change the world through a swing.”</span>
+          <small>Mission phrase from public Styles Foundation Africa social snippets</small>
         </div>
       </div>
-      <aside class="hero-poster" aria-label="Isaac Styles Golf visual story card">
-        <div class="flag-band"></div>
-        <div class="poster-inner">
-          <p>From red dirt roads to the first tee</p>
+
+      <div class="hero-visual" aria-label="Golf in Uganda inspired visual">
+        <div class="sun"></div>
+        <div class="flag-stripes"><i></i><i></i><i></i></div>
+        <div class="dirt-road"></div>
+        <div class="golfer-card">
+          <span class="handle">@isaacstylesgolf</span>
           <strong>ONE SWING<br>AT A TIME</strong>
-          <span>@isaacstylesgolf</span>
+          <p>Golf access. Mentorship. Hope.</p>
         </div>
-      </aside>
-    </section>
-
-    <section class="proof-bar">
-      <div><span>Home</span><strong>Lugazi, eastern Uganda</strong></div>
-      <div><span>Programs</span><strong>Free youth lessons, ages 2–18</strong></div>
-      <div><span>Reach</span><strong>Community clinics across Uganda + Kenya</strong></div>
-      <div><span>Vision</span><strong>Golf academy, education, and talent pathway</strong></div>
-    </section>
-
-    <section id="story" class="section story-section">
-      <div class="story-photo-card">
-        <div class="red-dirt"></div>
-        <div class="golf-ball"></div>
-        <div class="swing-line"></div>
-        <div class="story-label">Barefoot golfer. Self‑taught coach. Community builder.</div>
-      </div>
-      <div class="story-copy">
-        <p class="kicker">The Isaac Sekulima Story</p>
-        <h2>Golf found Isaac in 2018. Now he is bringing it to children who rarely get invited into the game.</h2>
-        <p>Public coverage describes Isaac as a self‑taught Ugandan golfer, coach, and content creator. He grew up in Lugazi, helped support family through small work, discovered golf while caddying in Entebbe, then taught himself by studying players like Tiger Woods and Rory McIlroy online.</p>
-        <p>What makes the foundation personal is the contrast: while golf is often seen as expensive and exclusive, Isaac teaches it on dirt roads, in villages, and at community lessons — showing kids they belong before they ever step onto a perfect fairway.</p>
-        <blockquote>“It’s not about fancy clubs, fancy clothes, or fancy golf courses. It starts with interest, passion, and someone believing they belong.”</blockquote>
       </div>
     </section>
 
-    <section id="work" class="section work-section">
-      <div class="section-heading">
-        <p class="kicker">What Donations Power</p>
-        <h2>Real support for the next generation of golfers.</h2>
+    <section class="quick-stats" aria-label="Foundation highlights">
+      <article><span>Home base</span><strong>Lugazi, Uganda</strong></article>
+      <article><span>Who it serves</span><strong>Young golfers ages 2–18</strong></article>
+      <article><span>What it funds</span><strong>Clubs, clinics, transport, school support</strong></article>
+      <article><span>Long-term dream</span><strong>Golf academy + learning pathway</strong></article>
+    </section>
+
+    <section id="story" class="section story">
+      <div class="photo-stack">
+        <div class="photo-card card-one"><span>red dirt fairways</span></div>
+        <div class="photo-card card-two"><span>kids learning the game</span></div>
+        <div class="photo-card card-three"><span>barefoot belief</span></div>
       </div>
-      <div class="work-grid">
-        <article><span>01</span><h3>First Swing Clinics</h3><p>Introduce children to golf in towns, villages, and community spaces using approachable coaching and borrowed/donated equipment.</p></article>
-        <article><span>02</span><h3>Equipment Access</h3><p>Clubs, balls, gloves, shoes, bags, practice nets, and training aids so lack of gear does not decide who gets to play.</p></article>
-        <article><span>03</span><h3>Mentorship & Discipline</h3><p>Golf becomes a tool for patience, focus, confidence, integrity, and leadership — not just a sport.</p></article>
-        <article><span>04</span><h3>School + Life Support</h3><p>Help children stay connected to education and opportunity, including school-fee support where possible.</p></article>
-        <article><span>05</span><h3>Travel + Tournaments</h3><p>Support promising juniors with transportation, entry fees, meals, and competition access.</p></article>
-        <article><span>06</span><h3>Future Academy</h3><p>Build toward a permanent golf academy and learning space rooted in Uganda but connected to the global golf community.</p></article>
+      <div class="copy">
+        <p class="tag">ISAAC SEKULIMA / ISAAC STYLES GOLF</p>
+        <h2>This site should feel like Isaac’s story — not a generic nonprofit page.</h2>
+        <p>Public coverage describes Isaac as a self-taught golfer, coach, and content creator from Lugazi in eastern Uganda. He found golf through caddying, learned by studying Tiger Woods and Rory McIlroy online, and now introduces the sport to children who rarely get access to clubs, courses, or formal coaching.</p>
+        <p>That’s the emotional center of this demo: golf is usually presented as polished, expensive, and exclusive. Isaac’s version is different — kids, dirt roads, donated gear, free lessons, and the belief that a first swing can unlock discipline, joy, and possibility.</p>
+        <div class="pullquote">“The future of sport isn’t just excellence. It’s who gets the chance to begin.”</div>
       </div>
     </section>
 
-    <section id="donate" class="section donate-panel">
-      <div class="donate-copy">
-        <p class="kicker">Give With Purpose</p>
-        <h2>Fund a child’s first chance to swing.</h2>
-        <p>These are demo donation amounts. In the final build, each button can connect to Stripe, PayPal, GiveWP, WooCommerce, donor receipts, and recurring giving.</p>
+    <section id="programs" class="section programs">
+      <div class="section-title">
+        <p class="tag">WHAT DONATIONS MAKE POSSIBLE</p>
+        <h2>Every dollar is tied to something visible.</h2>
       </div>
-      <div class="donate-grid">
-        <button><strong>$25</strong><span>Balls, tees, water, snacks</span></button>
-        <button><strong>$75</strong><span>Clinic transport + supplies</span></button>
-        <button><strong>$150</strong><span>Starter kit for one junior golfer</span></button>
-        <button><strong>$500</strong><span>Sponsor a community clinic</span></button>
-      </div>
-      <form class="donate-form">
-        <input type="number" placeholder="Custom amount" />
-        <input type="email" placeholder="Email for receipt" />
-        <button type="button">Demo Donate</button>
-      </form>
-    </section>
-
-    <section id="shop" class="section shop-section">
-      <div class="section-heading">
-        <p class="kicker">Golf Merchandise</p>
-        <h2>Wear the mission. Fund the work.</h2>
-        <p>Merch should feel tied to Isaac’s story — Uganda, red dirt, first swings, and the foundation’s slogan.</p>
-      </div>
-      <div class="product-grid">
-        <article class="product-card"><div class="product-art polo">SFA</div><h3>Change the World Polo</h3><p>Performance golf polo with foundation crest.</p><div><strong>$48</strong><button>Demo Add</button></div></article>
-        <article class="product-card"><div class="product-art cap">UG</div><h3>Lugazi Course Cap</h3><p>Structured cap honoring Isaac’s roots.</p><div><strong>$32</strong><button>Demo Add</button></div></article>
-        <article class="product-card"><div class="product-art towel">SWING</div><h3>One Swing Towel</h3><p>Golf towel with the foundation slogan.</p><div><strong>$24</strong><button>Demo Add</button></div></article>
-        <article class="product-card"><div class="product-art hoodie">HOPE</div><h3>Hope Is Freedom Hoodie</h3><p>Premium supporter hoodie for donors.</p><div><strong>$62</strong><button>Demo Add</button></div></article>
+      <div class="program-grid">
+        <article><span>01</span><h3>First Swing Clinics</h3><p>Community sessions where kids can hold a club, learn basics, and experience the joy of getting the ball in the air.</p></article>
+        <article><span>02</span><h3>Equipment Library</h3><p>A shared inventory of clubs, balls, shoes, gloves, bags, and training tools that keeps the program moving.</p></article>
+        <article><span>03</span><h3>Mentorship & Discipline</h3><p>Golf used as a framework for patience, focus, confidence, integrity, and leadership.</p></article>
+        <article><span>04</span><h3>School Support</h3><p>Donor-funded support for children whose education needs help alongside their athletic development.</p></article>
+        <article><span>05</span><h3>Junior Travel Fund</h3><p>Transportation, meals, and entry fees so talented kids can reach lessons, events, and tournaments.</p></article>
+        <article><span>06</span><h3>Academy Vision</h3><p>A future permanent training and learning space rooted in Uganda with a pathway to the global golf stage.</p></article>
       </div>
     </section>
 
-    <section class="section sponsor-section">
-      <div>
-        <p class="kicker">Sponsor Pitch</p>
-        <h2>Built for donors, brands, courses, and golf partners.</h2>
+    <section id="donate" class="donation-section">
+      <div class="donation-copy">
+        <p class="tag">DEMO DONATION FLOW</p>
+        <h2>Give a child the first chance to swing.</h2>
+        <p>In a real build, these cards would connect to Stripe, PayPal, GiveWP, WooCommerce donations, donor receipts, recurring gifts, and campaign tracking.</p>
       </div>
-      <div class="sponsor-cards">
-        <article><h3>Equipment Partners</h3><p>Donate used or new clubs, balls, bags, apparel, and training aids.</p></article>
-        <article><h3>Monthly Donors</h3><p>Recurring gifts fund clinics, school support, transport, and meals.</p></article>
-        <article><h3>Golf Ambassadors</h3><p>Share Isaac’s story and help connect the foundation with sponsors.</p></article>
+      <div class="donation-panel">
+        <button><strong>$25</strong><span>Practice balls, tees, water</span></button>
+        <button><strong>$75</strong><span>Clinic transport and snacks</span></button>
+        <button><strong>$150</strong><span>Starter kit for one junior</span></button>
+        <button><strong>$500</strong><span>Sponsor a full clinic day</span></button>
+        <form>
+          <input type="number" placeholder="Custom amount" />
+          <input type="email" placeholder="Donor email" />
+          <button type="button">Demo Donate</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="shop" class="section shop">
+      <div class="section-title">
+        <p class="tag">MISSION MERCH</p>
+        <h2>Golf merchandise that tells the story.</h2>
+        <p>Instead of generic golf products, the shop is built around Uganda, Isaac’s story, and the foundation message.</p>
+      </div>
+      <div class="products">
+        <article>
+          <div class="product-art polo"><span>SFA</span></div>
+          <h3>Change the World Polo</h3>
+          <p>Performance polo with foundation crest.</p>
+          <div class="price"><b>$48</b><button>Demo Add</button></div>
+        </article>
+        <article>
+          <div class="product-art cap"><span>UG</span></div>
+          <h3>Lugazi Course Cap</h3>
+          <p>Structured golf cap honoring Isaac’s roots.</p>
+          <div class="price"><b>$32</b><button>Demo Add</button></div>
+        </article>
+        <article>
+          <div class="product-art towel"><span>SWING</span></div>
+          <h3>One Swing Towel</h3>
+          <p>Course towel with the movement slogan.</p>
+          <div class="price"><b>$24</b><button>Demo Add</button></div>
+        </article>
+        <article>
+          <div class="product-art hoodie"><span>HOPE</span></div>
+          <h3>Hope Is Freedom Hoodie</h3>
+          <p>Premium supporter hoodie for donors.</p>
+          <div class="price"><b>$62</b><button>Demo Add</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section sponsors">
+      <div class="sponsor-copy">
+        <p class="tag">BUILT FOR SPONSORS</p>
+        <h2>A clear pitch for donors, golf brands, courses, and ambassadors.</h2>
+      </div>
+      <div class="sponsor-list">
+        <article><h3>Donate Equipment</h3><p>Collect clubs, balls, bags, shoes, gloves, apparel, nets, and training aids.</p></article>
+        <article><h3>Sponsor Clinics</h3><p>Fund transport, meals, coaching days, supplies, and documentation.</p></article>
+        <article><h3>Back the Academy</h3><p>Support the long-term dream: a home for youth golf and education in Uganda.</p></article>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer>
     <div>
       <strong>Styles Foundation Africa</strong>
-      <p>Personalized demo site using public information. Final copy should be approved by Isaac/Foundation before launch.</p>
+      <p>Custom demo concept built from public info. Final facts, copy, donation setup, and merch should be approved by Isaac/Foundation before launch.</p>
     </div>
-    <nav><a href="https://www.instagram.com/styles_foundation_africa/">Foundation IG</a><a href="https://www.instagram.com/isaacstylesgolf/">Isaac IG</a><a href="https://www.olympics.com/en/news/isaac-sekulima-bringing-golf-to-uganda-children">Public Story</a></nav>
+    <nav>
+      <a href="https://www.instagram.com/styles_foundation_africa/">Foundation Instagram</a>
+      <a href="https://www.instagram.com/isaacstylesgolf/">Isaac Styles Golf</a>
+      <a href="https://www.olympics.com/en/news/isaac-sekulima-bringing-golf-to-uganda-children">Public Story</a>
+    </nav>
   </footer>
 </body>
 </html>
