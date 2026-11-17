@@ -124,3 +124,35 @@ if ('IntersectionObserver' in window) {
   }, {rootMargin: '-15% 0px -45% 0px'});
   sectionLinks.forEach(link => { const section = document.querySelector(link.hash); if (section) observer.observe(section); });
 }
+
+const photoStrip = document.querySelector('#photo-strip');
+const stripBack = document.querySelector('#gallery-back');
+const stripForward = document.querySelector('#gallery-forward');
+document.querySelector('.gallery-tools').hidden = false;
+function updateStripControls() {
+  stripBack.disabled = photoStrip.scrollLeft < 2;
+  stripForward.disabled = photoStrip.scrollLeft + photoStrip.clientWidth >= photoStrip.scrollWidth - 2;
+}
+function moveStrip(direction) {
+  const distance = photoStrip.querySelector('.social-card').getBoundingClientRect().width + 16;
+  photoStrip.scrollBy({left: direction * distance, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+}
+stripBack.addEventListener('click', () => moveStrip(-1));
+stripForward.addEventListener('click', () => moveStrip(1));
+photoStrip.addEventListener('scroll', updateStripControls, {passive:true});
+window.addEventListener('resize', updateStripControls);
+updateStripControls();
+document.querySelectorAll('.inquiry-copy').forEach(button => {
+  button.hidden = false;
+  button.addEventListener('click', async () => {
+    const status = document.querySelector('#inquiry-status');
+    try {
+      await navigator.clipboard.writeText(button.dataset.inquiry);
+      status.textContent = 'Message copied. Open Instagram and paste it into your conversation with the foundation.';
+      button.textContent = 'Copied ✓';
+    } catch {
+      status.textContent = 'Copy this message: ' + button.dataset.inquiry;
+      status.scrollIntoView({block:'center'});
+    }
+  });
+});
