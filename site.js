@@ -1,6 +1,8 @@
 const dialog = document.querySelector('#preview-dialog');
 const content = document.querySelector('#dialog-content');
+let previewTrigger = null;
 function preview(title, lines) {
+  previewTrigger = document.activeElement;
   document.querySelector('#dialog-title').textContent = title;
   content.replaceChildren(...lines.map(text => {
     const p = document.createElement('p');
@@ -8,6 +10,7 @@ function preview(title, lines) {
     return p;
   }));
   dialog.showModal();
+  document.body.classList.add('preview-viewing');
 }
 const giftForm = document.querySelector('.donation-box form');
 const amountInput = giftForm.querySelector('[type=number]');
@@ -130,6 +133,9 @@ const stripBack = document.querySelector('#gallery-back');
 const stripForward = document.querySelector('#gallery-forward');
 document.querySelector('.gallery-tools').hidden = false;
 function updateStripControls() {
+  const step = photoStrip.querySelector('.social-card').getBoundingClientRect().width + 16;
+  const current = Math.min(gallery.length, Math.round(photoStrip.scrollLeft / step) + 1);
+  document.querySelector('#gallery-position').textContent = `${current} of ${gallery.length}`;
   stripBack.disabled = photoStrip.scrollLeft < 2;
   stripForward.disabled = photoStrip.scrollLeft + photoStrip.clientWidth >= photoStrip.scrollWidth - 2;
 }
@@ -144,15 +150,33 @@ window.addEventListener('resize', updateStripControls);
 updateStripControls();
 document.querySelectorAll('.inquiry-copy').forEach(button => {
   button.hidden = false;
+  const originalLabel = button.textContent;
+  let feedbackTimer;
   button.addEventListener('click', async () => {
     const status = document.querySelector('#inquiry-status');
     try {
       await navigator.clipboard.writeText(button.dataset.inquiry);
       status.textContent = 'Message copied. Open Instagram and paste it into your conversation with the foundation.';
       button.textContent = 'Copied ✓';
+      clearTimeout(feedbackTimer);
+      feedbackTimer = setTimeout(() => { button.textContent = originalLabel; }, 3000);
     } catch {
       status.textContent = 'Copy this message: ' + button.dataset.inquiry;
       status.scrollIntoView({block:'center'});
     }
   });
+});
+
+// Keep modal scrolling and keyboard focus predictable.
+dialog.addEventListener('close', () => {
+  document.body.classList.remove('preview-viewing');
+  previewTrigger?.focus();
+});
+document.querySelector('#empty-bag').addEventListener('click', () => {
+  bag.clear();
+  document.querySelector('#bag-count').textContent = '0';
+  document.querySelector('#bag-total').textContent = '0';
+  document.querySelectorAll('.product-grid button').forEach(button => { button.textContent = 'Add to Demo Bag'; });
+  document.querySelector('.product-grid button').focus();
+  document.querySelector('.demo-bag').hidden = true;
 });
