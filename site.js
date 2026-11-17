@@ -112,3 +112,15 @@ photoDialog.addEventListener('click', event => {
 });
 // Reset mobile navigation when returning to a wide viewport.
 window.matchMedia('(min-width: 701px)').addEventListener('change', closeMenu);
+
+// Highlight the current section without moving focus or changing browser history.
+const sectionLinks = [...primaryNav.querySelectorAll('a[href^="#"]')];
+if ('IntersectionObserver' in window) {
+  const visibleSections = new Set();
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => entry.isIntersecting ? visibleSections.add(entry.target.id) : visibleSections.delete(entry.target.id));
+    const active = sectionLinks.find(link => visibleSections.has(link.hash.slice(1)));
+    sectionLinks.forEach(link => link === active ? link.setAttribute('aria-current', 'location') : link.removeAttribute('aria-current'));
+  }, {rootMargin: '-15% 0px -45% 0px'});
+  sectionLinks.forEach(link => { const section = document.querySelector(link.hash); if (section) observer.observe(section); });
+}
