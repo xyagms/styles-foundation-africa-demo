@@ -83,6 +83,7 @@ function showPhoto(index) {
   full.alt = original.alt;
   document.querySelector('#photo-title').textContent = card.querySelector('h3').textContent;
   document.querySelector('#photo-original').href = card.querySelector('.photo-source').href;
+  document.querySelector('#photo-original').textContent = card.querySelector('.photo-source').textContent;
   document.querySelector('#photo-count').textContent = `${photoIndex + 1} / ${gallery.length}`;
 }
 gallery.forEach((card, index) => {
@@ -179,4 +180,9 @@ document.querySelector('#empty-bag').addEventListener('click', () => {
   document.querySelectorAll('.product-grid button').forEach(button => { button.textContent = 'Add to Demo Bag'; });
   document.querySelector('.product-grid button').focus();
   document.querySelector('.demo-bag').hidden = true;
+});
+
+// Only one clip plays at a time; videos never autoplay.
+document.querySelectorAll('.film-card video').forEach(video => {
+  video.addEventListener('play', () => document.querySelectorAll('.film-card video').forEach(other => { if (other !== video) other.pause(); }));
 });
